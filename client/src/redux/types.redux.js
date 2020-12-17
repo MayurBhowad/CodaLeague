@@ -1,0 +1,4 @@
+export const LOADING = 'LOADING';
+
+export const GET_TEAM_DETAILS = 'GET_TEAM_DETAILS';
+export const GET_ALL_TEAM_DETAILS = 'GET_ALL_TEAM_DETAILS';

@@ -1,0 +1,34 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+.logo {
+  padding: 0 30px;
+}
+
+.content {
+  display: flex;
+  padding: 40px 0;
+}
+
+.side-nav,
+.main-view {
+  border: 2px solid rgb(161, 145, 189);
+  width: 30%;
+  height: 100%;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.main-view {
+  width: 70%;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
