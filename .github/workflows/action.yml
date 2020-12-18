@@ -18,10 +18,6 @@ jobs:
         id: install
         run: npm i && cd client && npm i
 
-      - name: start app
-        id: start
-        run: npm run dev
-
       - name: testing api
         id: test-api
         run: npm run test

@@ -4,6 +4,8 @@ const mongoDB = 'mongodb://localhost:27017/my_test_database'
 mongoose.connect(mongoDB);
 const Team = require('./team.model');
 
+console.log(process.env.NODE_ENV);
+
 describe('Team model test', () => {
     beforeAll(async () => {
         await Team.remove({})
