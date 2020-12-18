@@ -18,7 +18,7 @@ router.get('/testing', async (req, res) => {
 //@desc     GEt all Upcomming Match details
 //@route    /matches/all_upcomming_matches
 //access    public
-router.get(`/matches/all_upcomming_matches`, (req, res) => {
+router.get(`/all_upcomming_matches`, (req, res) => {
     const page = req.query.page;
     const limit = req.query.limit;
     const result = {}
@@ -26,7 +26,7 @@ router.get(`/matches/all_upcomming_matches`, (req, res) => {
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
 
-    Matches.find({}).sort({ date: -1 }).populate('Teams').then(all => {
+    Matches.find({}).populate(['home_team', 'challenger']).then(all => {
         result.totalMatches = all.length;
         result.matches = all.slice(startIndex, endIndex)
         res.status(200).json(result);
@@ -197,7 +197,11 @@ router.post('/add/new_game', (req, res) => {
 //@route    /team_details/:team_name
 //access    public
 
-
+router.get('/get/single_match/:team_id', (req, res) => {
+    Matches.findOne({ id: req.params.team_name }).populate(['home_team', 'challenger']).then(team => {
+        res.json(team);
+    })
+})
 
 
 

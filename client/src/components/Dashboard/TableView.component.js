@@ -7,7 +7,7 @@ export class TableView extends Component {
         let tableRow;
         if (teams) {
             tableRow = teams.map((team, index) => (
-                <Table_Row team={team} index={index} />
+                <Table_Row key={team._id} team={team} index={index} />
             ))
         }
 

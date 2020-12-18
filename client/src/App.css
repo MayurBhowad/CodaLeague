@@ -24,11 +24,36 @@
   width: 70%;
 }
 
+/* Create Game */
+/* .create-game .team {
+  display: flex;
+  width: 100%;
+} */
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+  }
+
+  .side-nav,
+  .main-view {
+    border: 2px solid rgb(161, 145, 189);
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
   }
 }

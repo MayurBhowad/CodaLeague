@@ -1,5 +1,8 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
+
+//Reducers
+import matchReducer from './reducers/match.reducer';
 import teamReducer from './reducers/team.reducer';
 
 
@@ -8,7 +11,8 @@ const initialState = {};
 const middleware = [thunk];
 
 const reducer = combineReducers({
-    team: teamReducer
+    team: teamReducer,
+    match: matchReducer
 });
 
 const store = createStore(

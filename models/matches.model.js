@@ -3,10 +3,10 @@ const Schema = mongoose.Schema;
 
 const matchSchema = new Schema({
     home_team: {
-        type: Schema.Types.ObjectId, ref: 'Teams'
+        type: Schema.Types.ObjectId, ref: 'teams'
     },
     challenger: {
-        type: Schema.Types.ObjectId, ref: 'Teams'
+        type: Schema.Types.ObjectId, ref: 'teams'
     },
     winner: {
         type: String,

@@ -13,7 +13,7 @@ class NavbarComponent extends Component {
                         <Nav.Link><Link to="/">Home</Link></Nav.Link>
                         <Nav.Link href="#link">Link</Nav.Link>
                         <NavDropdown title="Menu" id="basic-nav-dropdown" drop="left">
-                            <NavDropdown.Item href="#action/3.1">New Game</NavDropdown.Item>
+                            <NavDropdown.Item><Link to="/dashboard/new_game">New Game</Link></NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                             <NavDropdown.Divider />

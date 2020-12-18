@@ -3,6 +3,7 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { submitMatchStatusData } from '../../redux/actions/team.action';
+import { getAllFutureMatches } from '../../redux/actions/matches.action';
 
 export class Matches extends Component {
     constructor(props) {
@@ -17,6 +18,10 @@ export class Matches extends Component {
         this.onSubmit = this.onSubmit.bind(this)
     }
 
+    componentDidMount() {
+        this.props.getAllFutureMatches(1, 4);
+    }
+
     onSubmit() {
         const matchData = {
             home_team: this.state.home_team,
@@ -25,7 +30,7 @@ export class Matches extends Component {
             looser: this.state.looser,
             isTie: ((this.state.winner === '' || this.state.looser === '') ? true : false),
         }
-        this.props.submitMatchStatusData(matchData);
+        // this.props.submitMatchStatusData(matchData);
 
     }
 
@@ -44,4 +49,4 @@ const mapStateToProps = state => ({
 
 })
 
-export default connect(mapStateToProps, { submitMatchStatusData })(Matches);
+export default connect(mapStateToProps, { getAllFutureMatches })(Matches);

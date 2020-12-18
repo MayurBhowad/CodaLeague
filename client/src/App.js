@@ -6,6 +6,7 @@ import MainView from './components/Dashboard/MainView.component';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Teams from './components/Dashboard/Teams.component';
 import Matches from './components/Dashboard/Matches.component';
+import CreateGame from './components/add/CreateGame.component';
 
 //Redux
 import { Provider } from 'react-redux';
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/" exact component={MainView} />
                 <Route path="/dashboard/teams" exact component={Teams} />
                 <Route path="/dashboard/matches" exact component={Matches} />
+                <Route path="/dashboard/new_game" exact component={CreateGame} />
               </div>
             </div>
 
