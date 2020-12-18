@@ -11,13 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      
+      - name: install packages
+        id: install
+        run: npm i && cd client && npm i
 
-      - name: deopling to Heroku
-        id: deploy
-        uses: akhileshns/heroku-deploy@v3.6.8
-
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "codaleague"
-          heroku_email: "mayurbhowad10924@gmail.com"
+      - name: testing api
+        id: test-api
+        run: npm run test
+        
+      - name: testing front-end
+        id: test-Front-end
+        run: cd client && npm test
