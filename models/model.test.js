@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoDB = 'mongodb://localhost:27017/my_test_database'
+const mongoDB = process.env.MONGO_URI;
 mongoose.connect(mongoDB);
 const Team = require('./team.model');
 
