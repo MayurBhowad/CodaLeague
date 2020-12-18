@@ -3,7 +3,7 @@ name: deopling COdaLeague
 on:
   push:
     branches:
-      - master
+      - test
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
       - name: testing api
         id: test-api
         run: npm run test
-        
+
       - name: testing front-end
         id: test-Front-end
         run: cd client && npm test
