@@ -35,6 +35,8 @@ mongoose.connect(MongoURI, { useNewUrlParser: true, useUnifiedTopology: true, us
 app.use('/teams', require('./routes/api/teams.routes'));
 app.use('/matches', require('./routes/api/match.routes'));
 
+
+console.log(process.env.NODE_ENV);
 //serve static assets if in Production
 if (process.env.NODE_ENV === 'production') {
     //set static folder

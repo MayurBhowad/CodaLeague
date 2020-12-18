@@ -10,19 +10,23 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NODE_ENV: production
-      
+
     steps:
       - uses: actions/checkout@v2
 
       - name: install packages
         id: install
         run: npm i && cd client && npm i
-        env:
-          MONGO_URI: ${{secrets.MONGO_URI}}
+
+      - name: start app
+        id: start
+        run: npm run dev
 
       - name: testing api
         id: test-api
         run: npm run test
+        env:
+          MONGO_URI: ${{secrets.MONGO_URI}}
 
       - name: testing front-end
         id: test-Front-end
